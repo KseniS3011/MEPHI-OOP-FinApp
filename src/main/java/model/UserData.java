@@ -1,11 +1,12 @@
 package model;
 
 public class UserData {
-   private User user;
+    private User user;
     private Wallet wallet;
     private String hashPassword;
 
-    public UserData() {}
+    public UserData() {
+    }
 
     public void createData(User user, Wallet wallet, String hashPassword) {
         this.user = user;
@@ -17,7 +18,9 @@ public class UserData {
         return user;
     }
 
-    public Wallet getWallet() { return wallet; }
+    public Wallet getWallet() {
+        return wallet;
+    }
 
     public void setWallet(Wallet wallet) {
         this.wallet = wallet;

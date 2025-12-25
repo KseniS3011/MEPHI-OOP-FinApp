@@ -26,21 +26,22 @@ public class History {
 <span class="nc" id="L26">            LocalDateTime dateTime = operation.getDateTime();</span>
 <span class="nc" id="L27">            DateTimeFormatter formatter = DateTimeFormatter.ofPattern(&quot;dd.MM.yyyy HH:mm&quot;);</span>
 <span class="nc" id="L28">            String formatted = dateTime.format(formatter);</span>
+<span class="nc bnc" id="L29" title="All 2 branches missed.">            String text = operation.getType().equals(OperationType.EXPENSE) ? &quot;Расход&quot; : &quot;Доход&quot;;</span>
 
-<span class="nc" id="L30">            System.out.println();</span>
-<span class="nc" id="L31">            System.out.println(&quot;Дата: &quot; + formatted);</span>
-<span class="nc bnc" id="L32" title="All 2 branches missed.">            System.out.println(&quot;Тип операции: &quot; + (operation.getType().equals(OperationType.EXPENSE) ? &quot;Расход&quot; : &quot;Доход&quot;));</span>
-<span class="nc" id="L33">            System.out.println(&quot;Сумма: &quot; + operation.getAmount());</span>
-<span class="nc" id="L34">            System.out.println();</span>
-<span class="nc" id="L35">        }</span>
-<span class="nc" id="L36">    }</span>
+<span class="nc" id="L31">            System.out.println();</span>
+<span class="nc" id="L32">            System.out.println(&quot;Дата: &quot; + formatted);</span>
+<span class="nc" id="L33">            System.out.println(&quot;Тип операции: &quot; + text);</span>
+<span class="nc" id="L34">            System.out.println(&quot;Сумма: &quot; + operation.getAmount());</span>
+<span class="nc" id="L35">            System.out.println();</span>
+<span class="nc" id="L36">        }</span>
+<span class="nc" id="L37">    }</span>
 
     public void setHistory(ArrayList&lt;Operation&gt; history) {
-<span class="nc" id="L39">        this.history = history;</span>
-<span class="nc" id="L40">    }</span>
+<span class="nc" id="L40">        this.history = history;</span>
+<span class="nc" id="L41">    }</span>
 
     public ArrayList&lt;Operation&gt; getHistory() {
-<span class="fc" id="L43">        return history;</span>
+<span class="fc" id="L44">        return history;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

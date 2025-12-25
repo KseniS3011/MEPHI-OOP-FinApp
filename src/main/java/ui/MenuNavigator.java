@@ -1,6 +1,5 @@
 package ui;
 
-import model.Operation;
 import model.OperationType;
 import model.User;
 import model.Wallet;
@@ -9,7 +8,6 @@ import services.UserDataService;
 import services.WalletService;
 import validators.UserValidator;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 public class MenuNavigator {

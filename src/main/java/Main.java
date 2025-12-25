@@ -1,10 +1,5 @@
-import model.User;
-import model.Wallet;
-import ui.ConsoleInput;
 import services.AuthService;
 import ui.MenuNavigator;
-
-import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
@@ -13,9 +8,8 @@ public class Main {
 
         navigator.startAuthMenu();
 
-        if(auth.getIsAuthorized()) {
+        if (auth.getIsAuthorized()) {
             navigator.startMainMenu();
         }
-
     }
 }

@@ -2,7 +2,6 @@ package model;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 public class Wallet {
     private double balance;
@@ -40,9 +39,13 @@ public class Wallet {
             this.history = new History();
         }
 
-        public String getName() { return name; }
+        public String getName() {
+            return name;
+        }
 
-        public void setName(String name) { this.name = name; }
+        public void setName(String name) {
+            this.name = name;
+        }
 
         public double getLimit() {
             return limit;
@@ -107,11 +110,19 @@ public class Wallet {
         this.balance = balance;
     }
 
-    public double getTotalExpenses() { return totalExpenses; }
+    public double getTotalExpenses() {
+        return totalExpenses;
+    }
 
-    public void setTotalExpenses(double totalExpenses) { this.totalExpenses = totalExpenses; }
+    public void setTotalExpenses(double totalExpenses) {
+        this.totalExpenses = totalExpenses;
+    }
 
-    public double getTotalIncome() { return totalIncome; }
+    public double getTotalIncome() {
+        return totalIncome;
+    }
 
-    public void setTotalIncome(double totalIncome) { this.totalIncome = totalIncome; }
+    public void setTotalIncome(double totalIncome) {
+        this.totalIncome = totalIncome;
+    }
 }

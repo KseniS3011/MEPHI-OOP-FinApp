@@ -26,10 +26,11 @@ public class History {
             LocalDateTime dateTime = operation.getDateTime();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MM.yyyy HH:mm");
             String formatted = dateTime.format(formatter);
+            String text = operation.getType().equals(OperationType.EXPENSE) ? "Расход" : "Доход";
 
             System.out.println();
             System.out.println("Дата: " + formatted);
-            System.out.println("Тип операции: " + (operation.getType().equals(OperationType.EXPENSE) ? "Расход" : "Доход"));
+            System.out.println("Тип операции: " + text);
             System.out.println("Сумма: " + operation.getAmount());
             System.out.println();
         }

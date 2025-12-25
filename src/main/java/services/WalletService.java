@@ -119,7 +119,10 @@ public class WalletService {
             category.addHistory(value, OperationType.EXPENSE);
 
             if (newExpenses == limitValue) {
-                System.out.println("Лимит исчерпан. Для того, чтобы совершать покупки в данной категории, необходимо изменить лимит.");
+                System.out.println(
+                        "Лимит исчерпан. " +
+                                "Для того, чтобы совершать покупки в данной категории, необходимо изменить лимит."
+                );
             } else if (newExpenses >= limitValue * 0.8) {
                 System.out.println("Израсходовано более 80% лимита.");
             }

@@ -2,7 +2,6 @@
 
 import java.util.LinkedHashMap;
 import java.util.Map;
-import java.util.TreeMap;
 
 public class Wallet {
     private double balance;
@@ -12,13 +11,13 @@ public class Wallet {
 
     public static final String WITHOUT_CATEGORY_NAME = &quot;Без категории&quot;;
 
-<span class="fc" id="L15">    public Wallet() {</span>
-<span class="fc" id="L16">        this.balance = 0;</span>
-<span class="fc" id="L17">        this.totalExpenses = 0;</span>
-<span class="fc" id="L18">        this.totalIncome = 0;</span>
-<span class="fc" id="L19">        this.categories = new LinkedHashMap&lt;&gt;();</span>
-<span class="fc" id="L20">        this.categories.put(&quot;1&quot;, new CategoryInfo(WITHOUT_CATEGORY_NAME));</span>
-<span class="fc" id="L21">    }</span>
+<span class="fc" id="L14">    public Wallet() {</span>
+<span class="fc" id="L15">        this.balance = 0;</span>
+<span class="fc" id="L16">        this.totalExpenses = 0;</span>
+<span class="fc" id="L17">        this.totalIncome = 0;</span>
+<span class="fc" id="L18">        this.categories = new LinkedHashMap&lt;&gt;();</span>
+<span class="fc" id="L19">        this.categories.put(&quot;1&quot;, new CategoryInfo(WITHOUT_CATEGORY_NAME));</span>
+<span class="fc" id="L20">    }</span>
 
     public static class CategoryInfo {
         private String name;
@@ -28,91 +27,103 @@ public class Wallet {
         private History history;
 
 
-<span class="nc" id="L31">        public CategoryInfo() {</span>
-<span class="nc" id="L32">            this.history = new History();</span>
-<span class="nc" id="L33">        }</span>
+<span class="nc" id="L30">        public CategoryInfo() {</span>
+<span class="nc" id="L31">            this.history = new History();</span>
+<span class="nc" id="L32">        }</span>
 
-<span class="fc" id="L35">        public CategoryInfo(String name) {</span>
-<span class="fc" id="L36">            this.name = name;</span>
-<span class="fc" id="L37">            this.limit = 0;</span>
-<span class="fc" id="L38">            this.expenses = 0;</span>
-<span class="fc" id="L39">            this.income = 0;</span>
-<span class="fc" id="L40">            this.history = new History();</span>
-<span class="fc" id="L41">        }</span>
+<span class="fc" id="L34">        public CategoryInfo(String name) {</span>
+<span class="fc" id="L35">            this.name = name;</span>
+<span class="fc" id="L36">            this.limit = 0;</span>
+<span class="fc" id="L37">            this.expenses = 0;</span>
+<span class="fc" id="L38">            this.income = 0;</span>
+<span class="fc" id="L39">            this.history = new History();</span>
+<span class="fc" id="L40">        }</span>
 
-<span class="fc" id="L43">        public String getName() { return name; }</span>
+        public String getName() {
+<span class="fc" id="L43">            return name;</span>
+        }
 
-<span class="nc" id="L45">        public void setName(String name) { this.name = name; }</span>
+        public void setName(String name) {
+<span class="nc" id="L47">            this.name = name;</span>
+<span class="nc" id="L48">        }</span>
 
         public double getLimit() {
-<span class="fc" id="L48">            return limit;</span>
+<span class="fc" id="L51">            return limit;</span>
         }
 
         public void setLimit(double limit) {
-<span class="fc" id="L52">            this.limit = limit;</span>
-<span class="fc" id="L53">        }</span>
+<span class="fc" id="L55">            this.limit = limit;</span>
+<span class="fc" id="L56">        }</span>
 
         public double getExpenses() {
-<span class="fc" id="L56">            return expenses;</span>
+<span class="fc" id="L59">            return expenses;</span>
         }
 
         public void setExpenses(double expenses) {
-<span class="fc" id="L60">            this.expenses = expenses;</span>
-<span class="fc" id="L61">        }</span>
+<span class="fc" id="L63">            this.expenses = expenses;</span>
+<span class="fc" id="L64">        }</span>
 
         public double getIncome() {
-<span class="fc" id="L64">            return income;</span>
+<span class="fc" id="L67">            return income;</span>
         }
 
         public void setIncome(double income) {
-<span class="fc" id="L68">            this.income = income;</span>
-<span class="fc" id="L69">        }</span>
+<span class="fc" id="L71">            this.income = income;</span>
+<span class="fc" id="L72">        }</span>
 
         public History getHistory() {
-<span class="fc" id="L72">            return this.history;</span>
+<span class="fc" id="L75">            return this.history;</span>
         }
 
         public void setHistory(History history) {
-<span class="nc" id="L76">            this.history = history;</span>
-<span class="nc" id="L77">        }</span>
+<span class="nc" id="L79">            this.history = history;</span>
+<span class="nc" id="L80">        }</span>
 
         public void addHistory(double amount, OperationType type) {
-<span class="fc" id="L80">            this.history.add(amount, type);</span>
-<span class="fc" id="L81">        }</span>
+<span class="fc" id="L83">            this.history.add(amount, type);</span>
+<span class="fc" id="L84">        }</span>
 
         public void showCategoryInfo() {
-<span class="nc" id="L84">            System.out.println();</span>
-<span class="nc" id="L85">            System.out.println(&quot;Название категории: &quot; + getName());</span>
-<span class="nc" id="L86">            System.out.println(&quot;Лимит: &quot; + getLimit());</span>
-<span class="nc" id="L87">            System.out.println(&quot;Доход: &quot; + getIncome());</span>
-<span class="nc" id="L88">            System.out.println(&quot;Расход: &quot; + getExpenses());</span>
-<span class="nc" id="L89">            history.print();</span>
-<span class="nc" id="L90">            System.out.println();</span>
-<span class="nc" id="L91">        }</span>
+<span class="nc" id="L87">            System.out.println();</span>
+<span class="nc" id="L88">            System.out.println(&quot;Название категории: &quot; + getName());</span>
+<span class="nc" id="L89">            System.out.println(&quot;Лимит: &quot; + getLimit());</span>
+<span class="nc" id="L90">            System.out.println(&quot;Доход: &quot; + getIncome());</span>
+<span class="nc" id="L91">            System.out.println(&quot;Расход: &quot; + getExpenses());</span>
+<span class="nc" id="L92">            history.print();</span>
+<span class="nc" id="L93">            System.out.println();</span>
+<span class="nc" id="L94">        }</span>
     }
 
     public Map&lt;String, CategoryInfo&gt; getCategories() {
-<span class="fc" id="L95">        return categories;</span>
+<span class="fc" id="L98">        return categories;</span>
     }
 
     public void setCategories(Map&lt;String, CategoryInfo&gt; categories) {
-<span class="fc" id="L99">        this.categories = categories;</span>
-<span class="fc" id="L100">    }</span>
+<span class="fc" id="L102">        this.categories = categories;</span>
+<span class="fc" id="L103">    }</span>
 
     public double getBalance() {
-<span class="fc" id="L103">        return balance;</span>
+<span class="fc" id="L106">        return balance;</span>
     }
 
     public void setBalance(double balance) {
-<span class="fc" id="L107">        this.balance = balance;</span>
-<span class="fc" id="L108">    }</span>
+<span class="fc" id="L110">        this.balance = balance;</span>
+<span class="fc" id="L111">    }</span>
 
-<span class="fc" id="L110">    public double getTotalExpenses() { return totalExpenses; }</span>
+    public double getTotalExpenses() {
+<span class="fc" id="L114">        return totalExpenses;</span>
+    }
 
-<span class="fc" id="L112">    public void setTotalExpenses(double totalExpenses) { this.totalExpenses = totalExpenses; }</span>
+    public void setTotalExpenses(double totalExpenses) {
+<span class="fc" id="L118">        this.totalExpenses = totalExpenses;</span>
+<span class="fc" id="L119">    }</span>
 
-<span class="fc" id="L114">    public double getTotalIncome() { return totalIncome; }</span>
+    public double getTotalIncome() {
+<span class="fc" id="L122">        return totalIncome;</span>
+    }
 
-<span class="fc" id="L116">    public void setTotalIncome(double totalIncome) { this.totalIncome = totalIncome; }</span>
+    public void setTotalIncome(double totalIncome) {
+<span class="fc" id="L126">        this.totalIncome = totalIncome;</span>
+<span class="fc" id="L127">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>
