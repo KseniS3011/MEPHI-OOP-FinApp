@@ -29,6 +29,8 @@ class AuthServiceTest {
     void cleanStorage() throws IOException {
         Path storage = Paths.get("storage");
 
+        Files.createDirectories(storage);
+
         if (Files.exists(storage)) {
             Files.list(storage)
                     .filter(Files::isRegularFile)

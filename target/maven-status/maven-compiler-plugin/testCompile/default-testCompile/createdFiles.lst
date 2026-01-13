@@ -1,5 +1,0 @@
-services\WalletServiceTest.class
-validators\UserValidatorTest.class
-services\AuthServiceTest.class
-services\UserDataServiceTest.class
-utilites\PasswordHasherTest.class
